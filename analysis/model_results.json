@@ -1,0 +1,71 @@
+{
+  "seed": 42,
+  "split": {
+    "train": 4225,
+    "validation": 1409,
+    "test": 1409
+  },
+  "churn_rate_overall": 0.2654,
+  "validation": [
+    {
+      "model": "baseline_majority",
+      "accuracy": 0.7346,
+      "precision": 0.0,
+      "recall": 0.0,
+      "roc_auc": 0.5
+    },
+    {
+      "model": "logistic_regression",
+      "accuracy": 0.824,
+      "precision": 0.6981,
+      "recall": 0.5936,
+      "roc_auc": 0.8599
+    },
+    {
+      "model": "decision_tree",
+      "accuracy": 0.7956,
+      "precision": 0.6629,
+      "recall": 0.4679,
+      "roc_auc": 0.8395
+    },
+    {
+      "model": "random_forest",
+      "accuracy": 0.8098,
+      "precision": 0.7103,
+      "recall": 0.4786,
+      "roc_auc": 0.858
+    }
+  ],
+  "test": [
+    {
+      "model": "baseline_majority",
+      "accuracy": 0.7346,
+      "precision": 0.0,
+      "recall": 0.0,
+      "roc_auc": 0.5
+    },
+    {
+      "model": "logistic_regression",
+      "accuracy": 0.7885,
+      "precision": 0.6195,
+      "recall": 0.5267,
+      "roc_auc": 0.8324
+    },
+    {
+      "model": "decision_tree",
+      "accuracy": 0.7807,
+      "precision": 0.6226,
+      "recall": 0.4412,
+      "roc_auc": 0.8189
+    },
+    {
+      "model": "random_forest",
+      "accuracy": 0.785,
+      "precision": 0.6371,
+      "recall": 0.4412,
+      "roc_auc": 0.8324
+    }
+  ],
+  "selected_model": "logistic_regression",
+  "note": "Stratified random split on a fictional snapshot sample; measures interpolation, not prospective performance. Preprocessing fit on the training fold only. Columns such as contract, tenure and charges may be outcome-proximate; a real deployment needs point-in-time features. Validation used for selection, test reported for all models."
+}

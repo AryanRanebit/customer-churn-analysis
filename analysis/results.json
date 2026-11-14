@@ -1,0 +1,689 @@
+{
+  "Q1_overall": [
+    {
+      "customers": 7043,
+      "churned": 1869,
+      "churn_pct": 26.5
+    }
+  ],
+  "Q2_contract": [
+    {
+      "Contract": "Month-to-month",
+      "customers": 3875,
+      "churned": 1655,
+      "churn_pct": 42.7
+    },
+    {
+      "Contract": "One year",
+      "customers": 1473,
+      "churned": 166,
+      "churn_pct": 11.3
+    },
+    {
+      "Contract": "Two year",
+      "customers": 1695,
+      "churned": 48,
+      "churn_pct": 2.8
+    }
+  ],
+  "Q3_tenure_band": [
+    {
+      "tenure_band": "0-12",
+      "customers": 2186,
+      "churned": 1037,
+      "churn_pct": 47.4
+    },
+    {
+      "tenure_band": "13-24",
+      "customers": 1024,
+      "churned": 294,
+      "churn_pct": 28.7
+    },
+    {
+      "tenure_band": "25-48",
+      "customers": 1594,
+      "churned": 325,
+      "churn_pct": 20.4
+    },
+    {
+      "tenure_band": "49+",
+      "customers": 2239,
+      "churned": 213,
+      "churn_pct": 9.5
+    }
+  ],
+  "Q4_internet": [
+    {
+      "InternetService": "Fiber optic",
+      "customers": 3096,
+      "churned": 1297,
+      "churn_pct": 41.9
+    },
+    {
+      "InternetService": "DSL",
+      "customers": 2421,
+      "churned": 459,
+      "churn_pct": 19.0
+    },
+    {
+      "InternetService": "No",
+      "customers": 1526,
+      "churned": 113,
+      "churn_pct": 7.4
+    }
+  ],
+  "Q5_payment": [
+    {
+      "PaymentMethod": "Electronic check",
+      "customers": 2365,
+      "churned": 1071,
+      "churn_pct": 45.3
+    },
+    {
+      "PaymentMethod": "Mailed check",
+      "customers": 1612,
+      "churned": 308,
+      "churn_pct": 19.1
+    },
+    {
+      "PaymentMethod": "Bank transfer (automatic)",
+      "customers": 1544,
+      "churned": 258,
+      "churn_pct": 16.7
+    },
+    {
+      "PaymentMethod": "Credit card (automatic)",
+      "customers": 1522,
+      "churned": 232,
+      "churn_pct": 15.2
+    }
+  ],
+  "Q6_charges": [
+    {
+      "Churn": "No",
+      "customers": 5174,
+      "avg_monthly_charges": 61.27,
+      "avg_tenure_months": 37.6
+    },
+    {
+      "Churn": "Yes",
+      "customers": 1869,
+      "avg_monthly_charges": 74.44,
+      "avg_tenure_months": 18.0
+    }
+  ],
+  "Q7_techsupport": [
+    {
+      "TechSupport": "No",
+      "customers": 3473,
+      "churned": 1446,
+      "churn_pct": 41.6
+    },
+    {
+      "TechSupport": "Yes",
+      "customers": 2044,
+      "churned": 310,
+      "churn_pct": 15.2
+    },
+    {
+      "TechSupport": "No internet service",
+      "customers": 1526,
+      "churned": 113,
+      "churn_pct": 7.4
+    }
+  ],
+  "Q8_segment": [
+    {
+      "segment": "Everyone else",
+      "customers": 5049,
+      "churned": 845,
+      "churn_pct": 16.7
+    },
+    {
+      "segment": "Month-to-month, tenure 0-12",
+      "customers": 1994,
+      "churned": 1024,
+      "churn_pct": 51.4
+    }
+  ],
+  "Q9_revenue": [
+    {
+      "monthly_revenue_from_churned": 139130.85,
+      "churned_customers": 1869
+    }
+  ],
+  "I1_contribution_contract": [
+    {
+      "Contract": "Month-to-month",
+      "customers": 3875,
+      "pct_of_customers": 55.0,
+      "churned": 1655,
+      "pct_of_all_churn": 88.6,
+      "churn_pct": 42.7,
+      "churned_monthly_revenue": 120847.1,
+      "pct_of_churned_revenue": 86.9
+    },
+    {
+      "Contract": "One year",
+      "customers": 1473,
+      "pct_of_customers": 20.9,
+      "churned": 166,
+      "pct_of_all_churn": 8.9,
+      "churn_pct": 11.3,
+      "churned_monthly_revenue": 14118.45,
+      "pct_of_churned_revenue": 10.1
+    },
+    {
+      "Contract": "Two year",
+      "customers": 1695,
+      "pct_of_customers": 24.1,
+      "churned": 48,
+      "pct_of_all_churn": 2.6,
+      "churn_pct": 2.8,
+      "churned_monthly_revenue": 4165.3,
+      "pct_of_churned_revenue": 3.0
+    }
+  ],
+  "I2_priority_segment": [
+    {
+      "segment": "Month-to-month, tenure 0-12",
+      "customers": 1994,
+      "pct_of_customers": 28.3,
+      "churned": 1024,
+      "pct_of_all_churn": 54.8,
+      "churn_pct": 51.4,
+      "churned_monthly_revenue": 68301.45
+    },
+    {
+      "segment": "Everyone else",
+      "customers": 5049,
+      "pct_of_customers": 71.7,
+      "churned": 845,
+      "pct_of_all_churn": 45.2,
+      "churn_pct": 16.7,
+      "churned_monthly_revenue": 70829.4
+    }
+  ],
+  "I3_contract_within_tenure": [
+    {
+      "tenure_band": "0-12",
+      "Contract": "Month-to-month",
+      "customers": 1994,
+      "churned": 1024,
+      "churn_pct": 51.4
+    },
+    {
+      "tenure_band": "0-12",
+      "Contract": "One year",
+      "customers": 124,
+      "churned": 13,
+      "churn_pct": 10.5
+    },
+    {
+      "tenure_band": "0-12",
+      "Contract": "Two year",
+      "customers": 68,
+      "churned": 0,
+      "churn_pct": 0.0
+    },
+    {
+      "tenure_band": "13-24",
+      "Contract": "Month-to-month",
+      "customers": 737,
+      "churned": 278,
+      "churn_pct": 37.7
+    },
+    {
+      "tenure_band": "13-24",
+      "Contract": "One year",
+      "customers": 197,
+      "churned": 16,
+      "churn_pct": 8.1
+    },
+    {
+      "tenure_band": "13-24",
+      "Contract": "Two year",
+      "customers": 90,
+      "churned": 0,
+      "churn_pct": 0.0
+    },
+    {
+      "tenure_band": "25-48",
+      "Contract": "Month-to-month",
+      "customers": 802,
+      "churned": 264,
+      "churn_pct": 32.9
+    },
+    {
+      "tenure_band": "25-48",
+      "Contract": "One year",
+      "customers": 518,
+      "churned": 55,
+      "churn_pct": 10.6
+    },
+    {
+      "tenure_band": "25-48",
+      "Contract": "Two year",
+      "customers": 274,
+      "churned": 6,
+      "churn_pct": 2.2
+    },
+    {
+      "tenure_band": "49+",
+      "Contract": "Month-to-month",
+      "customers": 342,
+      "churned": 89,
+      "churn_pct": 26.0
+    },
+    {
+      "tenure_band": "49+",
+      "Contract": "One year",
+      "customers": 634,
+      "churned": 82,
+      "churn_pct": 12.9
+    },
+    {
+      "tenure_band": "49+",
+      "Contract": "Two year",
+      "customers": 1263,
+      "churned": 42,
+      "churn_pct": 3.3
+    }
+  ],
+  "I4_payment_within_mtm": [
+    {
+      "PaymentMethod": "Electronic check",
+      "customers": 1850,
+      "churned": 994,
+      "churn_pct": 53.7
+    },
+    {
+      "PaymentMethod": "Bank transfer (automatic)",
+      "customers": 589,
+      "churned": 201,
+      "churn_pct": 34.1
+    },
+    {
+      "PaymentMethod": "Credit card (automatic)",
+      "customers": 543,
+      "churned": 178,
+      "churn_pct": 32.8
+    },
+    {
+      "PaymentMethod": "Mailed check",
+      "customers": 893,
+      "churned": 282,
+      "churn_pct": 31.6
+    }
+  ],
+  "I5_echeck_mix_by_contract": [
+    {
+      "Contract": "Month-to-month",
+      "customers": 3875,
+      "echeck_customers": 1850,
+      "echeck_pct": 47.7
+    },
+    {
+      "Contract": "One year",
+      "customers": 1473,
+      "echeck_customers": 347,
+      "echeck_pct": 23.6
+    },
+    {
+      "Contract": "Two year",
+      "customers": 1695,
+      "echeck_customers": 168,
+      "echeck_pct": 9.9
+    }
+  ],
+  "I6_fiber_price": [
+    {
+      "price_tier": "$100+",
+      "customers": 908,
+      "churned": 257,
+      "churn_pct": 28.3
+    },
+    {
+      "price_tier": "$70-90",
+      "customers": 1294,
+      "churned": 661,
+      "churn_pct": 51.1
+    },
+    {
+      "price_tier": "$90-100",
+      "customers": 789,
+      "churned": 315,
+      "churn_pct": 39.9
+    },
+    {
+      "price_tier": "under $70",
+      "customers": 105,
+      "churned": 64,
+      "churn_pct": 61.0
+    }
+  ],
+  "I7_support_in_priority_segment": [
+    {
+      "TechSupport": "No",
+      "customers": 1363,
+      "churned": 832,
+      "churn_pct": 61.0
+    },
+    {
+      "TechSupport": "Yes",
+      "customers": 243,
+      "churned": 104,
+      "churn_pct": 42.8
+    },
+    {
+      "TechSupport": "No internet service",
+      "customers": 388,
+      "churned": 88,
+      "churn_pct": 22.7
+    }
+  ],
+  "I8_pareto": [
+    {
+      "segment": "Month-to-month / Fiber optic / no-support",
+      "customers": 1796,
+      "churned": 1033,
+      "churn_pct": 57.5,
+      "pct_of_all_churn": 55.3,
+      "cumulative_pct_of_churn": 55.3
+    },
+    {
+      "segment": "Month-to-month / DSL / no-support",
+      "customers": 884,
+      "churned": 317,
+      "churn_pct": 35.9,
+      "pct_of_all_churn": 17.0,
+      "cumulative_pct_of_churn": 72.2
+    },
+    {
+      "segment": "Month-to-month / Fiber optic / support",
+      "customers": 332,
+      "churned": 129,
+      "churn_pct": 38.9,
+      "pct_of_all_churn": 6.9,
+      "cumulative_pct_of_churn": 79.1
+    },
+    {
+      "segment": "Month-to-month / No / no-internet",
+      "customers": 524,
+      "churned": 99,
+      "churn_pct": 18.9,
+      "pct_of_all_churn": 5.3,
+      "cumulative_pct_of_churn": 84.4
+    },
+    {
+      "segment": "Month-to-month / DSL / support",
+      "customers": 339,
+      "churned": 77,
+      "churn_pct": 22.7,
+      "pct_of_all_churn": 4.1,
+      "cumulative_pct_of_churn": 88.6
+    },
+    {
+      "segment": "One year / Fiber optic / no-support",
+      "customers": 313,
+      "churned": 58,
+      "churn_pct": 18.5,
+      "pct_of_all_churn": 3.1,
+      "cumulative_pct_of_churn": 91.7
+    },
+    {
+      "segment": "One year / Fiber optic / support",
+      "customers": 226,
+      "churned": 46,
+      "churn_pct": 20.4,
+      "pct_of_all_churn": 2.5,
+      "cumulative_pct_of_churn": 94.1
+    },
+    {
+      "segment": "One year / DSL / support",
+      "customers": 326,
+      "churned": 29,
+      "churn_pct": 8.9,
+      "pct_of_all_churn": 1.6,
+      "cumulative_pct_of_churn": 95.7
+    },
+    {
+      "segment": "One year / DSL / no-support",
+      "customers": 244,
+      "churned": 24,
+      "churn_pct": 9.8,
+      "pct_of_all_churn": 1.3,
+      "cumulative_pct_of_churn": 97.0
+    },
+    {
+      "segment": "Two year / Fiber optic / support",
+      "customers": 308,
+      "churned": 21,
+      "churn_pct": 6.8,
+      "pct_of_all_churn": 1.1,
+      "cumulative_pct_of_churn": 98.1
+    },
+    {
+      "segment": "Two year / Fiber optic / no-support",
+      "customers": 121,
+      "churned": 10,
+      "churn_pct": 8.3,
+      "pct_of_all_churn": 0.5,
+      "cumulative_pct_of_churn": 98.6
+    },
+    {
+      "segment": "One year / No / no-internet",
+      "customers": 364,
+      "churned": 9,
+      "churn_pct": 2.5,
+      "pct_of_all_churn": 0.5,
+      "cumulative_pct_of_churn": 99.1
+    },
+    {
+      "segment": "Two year / DSL / support",
+      "customers": 513,
+      "churned": 8,
+      "churn_pct": 1.6,
+      "pct_of_all_churn": 0.4,
+      "cumulative_pct_of_churn": 99.5
+    },
+    {
+      "segment": "Two year / No / no-internet",
+      "customers": 638,
+      "churned": 5,
+      "churn_pct": 0.8,
+      "pct_of_all_churn": 0.3,
+      "cumulative_pct_of_churn": 99.8
+    },
+    {
+      "segment": "Two year / DSL / no-support",
+      "customers": 115,
+      "churned": 4,
+      "churn_pct": 3.5,
+      "pct_of_all_churn": 0.2,
+      "cumulative_pct_of_churn": 100.0
+    }
+  ],
+  "I9_price_deciles": [
+    {
+      "decile": 1,
+      "customers": 705,
+      "min_bill": 18.25,
+      "max_bill": 20.05,
+      "churned": 61,
+      "churn_pct": 8.7
+    },
+    {
+      "decile": 2,
+      "customers": 705,
+      "min_bill": 20.05,
+      "max_bill": 25.05,
+      "churned": 66,
+      "churn_pct": 9.4
+    },
+    {
+      "decile": 3,
+      "customers": 705,
+      "min_bill": 25.05,
+      "max_bill": 45.85,
+      "churned": 180,
+      "churn_pct": 25.5
+    },
+    {
+      "decile": 4,
+      "customers": 704,
+      "min_bill": 45.9,
+      "max_bill": 58.85,
+      "churned": 172,
+      "churn_pct": 24.4
+    },
+    {
+      "decile": 5,
+      "customers": 704,
+      "min_bill": 58.9,
+      "max_bill": 70.35,
+      "churned": 153,
+      "churn_pct": 21.7
+    },
+    {
+      "decile": 6,
+      "customers": 704,
+      "min_bill": 70.35,
+      "max_bill": 79.1,
+      "churned": 267,
+      "churn_pct": 37.9
+    },
+    {
+      "decile": 7,
+      "customers": 704,
+      "min_bill": 79.1,
+      "max_bill": 85.5,
+      "churned": 267,
+      "churn_pct": 37.9
+    },
+    {
+      "decile": 8,
+      "customers": 704,
+      "min_bill": 85.5,
+      "max_bill": 94.25,
+      "churned": 241,
+      "churn_pct": 34.2
+    },
+    {
+      "decile": 9,
+      "customers": 704,
+      "min_bill": 94.3,
+      "max_bill": 102.6,
+      "churned": 288,
+      "churn_pct": 40.9
+    },
+    {
+      "decile": 10,
+      "customers": 704,
+      "min_bill": 102.65,
+      "max_bill": 118.75,
+      "churned": 174,
+      "churn_pct": 24.7
+    }
+  ],
+  "I10_addon_ladder": [
+    {
+      "addon_count": 0,
+      "customers": 2219,
+      "churned": 475,
+      "churn_pct": 21.4
+    },
+    {
+      "addon_count": 1,
+      "customers": 966,
+      "churned": 442,
+      "churn_pct": 45.8
+    },
+    {
+      "addon_count": 2,
+      "customers": 1033,
+      "churned": 370,
+      "churn_pct": 35.8
+    },
+    {
+      "addon_count": 3,
+      "customers": 1118,
+      "churned": 306,
+      "churn_pct": 27.4
+    },
+    {
+      "addon_count": 4,
+      "customers": 852,
+      "churned": 190,
+      "churn_pct": 22.3
+    },
+    {
+      "addon_count": 5,
+      "customers": 571,
+      "churned": 71,
+      "churn_pct": 12.4
+    },
+    {
+      "addon_count": 6,
+      "customers": 284,
+      "churned": 15,
+      "churn_pct": 5.3
+    }
+  ],
+  "I10b_addon_ladder_fiber": [
+    {
+      "addon_count": 0,
+      "customers": 399,
+      "churned": 241,
+      "churn_pct": 60.4
+    },
+    {
+      "addon_count": 1,
+      "customers": 551,
+      "churned": 308,
+      "churn_pct": 55.9
+    },
+    {
+      "addon_count": 2,
+      "customers": 579,
+      "churned": 278,
+      "churn_pct": 48.0
+    },
+    {
+      "addon_count": 3,
+      "customers": 643,
+      "churned": 244,
+      "churn_pct": 37.9
+    },
+    {
+      "addon_count": 4,
+      "customers": 493,
+      "churned": 157,
+      "churn_pct": 31.8
+    },
+    {
+      "addon_count": 5,
+      "customers": 290,
+      "churned": 56,
+      "churn_pct": 19.3
+    },
+    {
+      "addon_count": 6,
+      "customers": 141,
+      "churned": 13,
+      "churn_pct": 9.2
+    }
+  ],
+  "I11_median_charges": [
+    {
+      "Churn": "No",
+      "customers": 2,
+      "median_monthly_charges": 64.43
+    },
+    {
+      "Churn": "Yes",
+      "customers": 1,
+      "median_monthly_charges": 79.65
+    }
+  ]
+}
