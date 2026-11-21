@@ -39,9 +39,11 @@ analysis/results.json        the captured outputs of that cross-check
 analysis/run_churn_model.py  modeling layer: leak-safe sklearn pipelines, honest evaluation
 analysis/model_results.json  measured validation/test metrics
 analysis/figures/            confusion matrix, ROC curves, feature importance charts
+analysis/tests/              Python regression suite: CSV shape, query/model drift checks
 dashboard/dashboard_spec.md  dashboard spec: pages, charts, expected values, binning definitions
 dashboard/churn_dashboard_dataset.csv  the extract the dashboard reads
 docs/experiment.md           design of a contract-conversion A/B test grounded in these findings
+docs/interview-walkthrough.md  how to explain every layer, with the questions interviewers ask
 data/raw/                    the unmodified IBM CSV + Apache 2.0 LICENSE
 ```
 
@@ -66,6 +68,22 @@ mysql --local-infile=1 < sql/07_regression_tests.sql
 The last script prints a 13-row PASS table and ends with
 `ALL TESTS PASSED`. If any check fails, it raises ERROR 3141 instead - a
 broken run cannot be mistaken for a green one.
+
+### Python regression tests
+
+The Python layer has the same drift protection as the SQL battery:
+
+```
+python3 -m pytest analysis/tests -v
+```
+
+The core tests need only the standard library: they check the bundled CSV's
+shape, recompute every query in `run_analysis.py` against the committed
+`results.json`, and validate the internal consistency of
+`model_results.json` (split sizes, baseline behavior, the selection rule).
+With scikit-learn installed, one more test re-runs the whole modeling
+script in a temporary directory and requires byte-identical metrics and
+valid figures; without it, that test skips itself.
 
 ### Safety notes (01_setup.sql)
 
@@ -336,6 +354,6 @@ The project now has five connected layers: safe SQL import and a normalized
 model, a data-quality battery and regression tests, descriptive + insight
 SQL (window functions: NTILE, ROW_NUMBER, running shares), a leak-safe
 Python modeling layer with measured, honestly-reported scores, and a BI
-dashboard in Looker Studio over the same metrics. The natural next step is
-a walkthrough that makes every query and every score explainable in an
-interview.
+dashboard in Looker Studio over the same metrics. `docs/interview-walkthrough.md` makes every query and every score
+explainable in an interview: the 60-second story, a file-by-file tour, the
+questions interviewers ask, and the numbers to know cold.
