@@ -1,31 +1,45 @@
 #!/usr/bin/env python3
 """Sandbox runner: executes the same analysis logic as sql/05_analysis.sql and
 sql/06_insights.sql against the raw CSV via SQLite, so every number in the
-README is verified on a second engine (MySQL 8 is the primary)."""
+README is verified on a second engine (MySQL 8 is the primary).
+
+Importable as a module (build_db / run_queries) so the regression tests in
+analysis/tests/ can recompute every query without subprocess overhead; running
+it as a script behaves exactly as before and rewrites analysis/results.json.
+"""
 import csv, json, sqlite3
+from pathlib import Path
 
-DB = ':memory:'
-CSV = 'data/raw/telco-customer-churn.csv'
+ROOT = Path(__file__).resolve().parent.parent
+CSV = ROOT / 'data' / 'raw' / 'telco-customer-churn.csv'
+OUT = ROOT / 'analysis' / 'results.json'
 
-con = sqlite3.connect(DB)
-con.execute('''CREATE TABLE telco_churn (
+SCHEMA = '''CREATE TABLE telco_churn (
     customerID TEXT, gender TEXT, SeniorCitizen INTEGER, Partner TEXT,
     Dependents TEXT, tenure INTEGER, PhoneService TEXT, MultipleLines TEXT,
     InternetService TEXT, OnlineSecurity TEXT, OnlineBackup TEXT,
     DeviceProtection TEXT, TechSupport TEXT, StreamingTV TEXT,
     StreamingMovies TEXT, Contract TEXT, PaperlessBilling TEXT,
-    PaymentMethod TEXT, MonthlyCharges REAL, TotalCharges REAL, Churn TEXT)''')
-with open(CSV) as f:
-    for r in csv.DictReader(f):
-        con.execute('INSERT INTO telco_churn VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
-            (r['customerID'], r['gender'], int(r['SeniorCitizen']), r['Partner'],
-             r['Dependents'], int(r['tenure']), r['PhoneService'], r['MultipleLines'],
-             r['InternetService'], r['OnlineSecurity'], r['OnlineBackup'],
-             r['DeviceProtection'], r['TechSupport'], r['StreamingTV'],
-             r['StreamingMovies'], r['Contract'], r['PaperlessBilling'],
-             r['PaymentMethod'], float(r['MonthlyCharges']),
-             float(r['TotalCharges']) if r['TotalCharges'].strip() else None,
-             r['Churn']))
+    PaymentMethod TEXT, MonthlyCharges REAL, TotalCharges REAL, Churn TEXT)'''
+
+def load_rows(con):
+    with open(CSV, newline='') as f:
+        for r in csv.DictReader(f):
+            con.execute('INSERT INTO telco_churn VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
+                (r['customerID'], r['gender'], int(r['SeniorCitizen']), r['Partner'],
+                 r['Dependents'], int(r['tenure']), r['PhoneService'], r['MultipleLines'],
+                 r['InternetService'], r['OnlineSecurity'], r['OnlineBackup'],
+                 r['DeviceProtection'], r['TechSupport'], r['StreamingTV'],
+                 r['StreamingMovies'], r['Contract'], r['PaperlessBilling'],
+                 r['PaymentMethod'], float(r['MonthlyCharges']),
+                 float(r['TotalCharges']) if r['TotalCharges'].strip() else None,
+                 r['Churn']))
+
+def build_db():
+    con = sqlite3.connect(':memory:')
+    con.execute(SCHEMA)
+    load_rows(con)
+    return con
 
 QUERIES = {
 'Q1_overall': """SELECT COUNT(*) customers, SUM(Churn='Yes') churned,
@@ -127,16 +141,23 @@ QUERIES = {
  WHERE rn IN ((n+1)/2, (n+2)/2) GROUP BY Churn""",
 }
 
-results = {}
-for name, q in QUERIES.items():
-    cur = con.execute(q)
-    cols = [d[0] for d in cur.description]
-    rows = [dict(zip(cols, r)) for r in cur.fetchall()]
-    results[name] = rows
-    print(f'== {name} ==')
-    for r in rows:
-        print('  ', r)
+def run_queries(con):
+    results = {}
+    for name, q in QUERIES.items():
+        cur = con.execute(q)
+        cols = [d[0] for d in cur.description]
+        results[name] = [dict(zip(cols, r)) for r in cur.fetchall()]
+    return results
 
-with open('analysis/results.json', 'w') as f:
-    json.dump(results, f, indent=2)
-print('saved analysis/results.json')
+def main():
+    results = run_queries(build_db())
+    for name, rows in results.items():
+        print(f'== {name} ==')
+        for r in rows:
+            print('  ', r)
+    with open(OUT, 'w') as f:
+        json.dump(results, f, indent=2)
+    print('saved analysis/results.json')
+
+if __name__ == '__main__':
+    main()
